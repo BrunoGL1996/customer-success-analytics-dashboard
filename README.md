@@ -1,181 +1,84 @@
-# customer-success-analytics-dashboard
-Customer Success Analytics project using Python, Pandas and Excel to analyze customer health, churn risk, MRR, segmentation and CS prioritization.
 # Customer Success Analytics Dashboard
 
-## 📌 Sobre o projeto
+Esse projeto começou como um exercício de **segmentação de clientes** durante meus estudos em Customer Analytics e acabou evoluindo para uma análise mais completa de **Customer Health, Churn Risk e MRR**.
 
-Projeto de **Customer Analytics aplicado a Customer Success**, desenvolvido a partir de uma carteira B2B SaaS simulada com **1.000 clientes**.
+A ideia foi trabalhar com uma carteira B2B SaaS simulada e entender como os dados poderiam ajudar um time de Customer Success a identificar quais clientes merecem mais atenção.
 
-O objetivo foi transformar dados de clientes em uma visão estruturada de **Customer Health, Churn Risk, MRR e priorização de atendimento**.
+## Sobre os dados
 
-O projeto começou como uma análise de segmentação e evoluiu para um dashboard capaz de apoiar decisões de Customer Success.
+A carteira possui:
 
----
+- 1.000 clientes
+- R$ 2,18M em MRR
+- 150 clientes classificados como alto risco de churn
+- 80 clientes classificados como High Priority
+- Health Score médio de 59,44
 
-## 🎯 Objetivo
+## Como o projeto foi desenvolvido
 
-Responder a uma pergunta simples:
+O projeto passou por algumas etapas, começando pela exploração dos dados e chegando ao dashboard final.
 
-> **Com 1.000 clientes na carteira, quais clientes deveriam receber atenção primeiro?**
+### 1. Python e Pandas
 
-Para isso, foram analisados diferentes indicadores de comportamento e valor:
+Primeiro, utilizei Python e Pandas para explorar a base e entender a distribuição dos principais indicadores.
 
-- Health Score
-- CSAT
-- MRR (Monthly Recurring Revenue)
-- Churn Risk
-- Segmentação de clientes
+Analisei principalmente:
 
-A ideia foi não tratar todos os clientes em risco da mesma forma, considerando também o impacto financeiro e a saúde da carteira.
-
----
-
-## 📊 Dados da carteira
-
-A base simulada contém:
-
-| Indicador | Resultado |
-|---|---:|
-| Clientes | 1.000 |
-| MRR total | R$ 2,18M |
-| Clientes em alto risco | 150 |
-| Clientes High Priority | 80 |
-| Health Score médio | 59,44 |
-
----
-
-# 🔎 Etapa 1 — Exploração dos dados
-
-A primeira etapa foi entender a estrutura da carteira e identificar os principais indicadores disponíveis.
-
-Foram analisados:
-
-- distribuição de clientes;
-- MRR;
-- CSAT;
-- Health Score;
-- risco de churn;
-- comportamento dos diferentes segmentos.
-
-Essa etapa foi realizada utilizando **Python e Pandas**.
-
-### Ferramentas
-
-🐍 Python  
-🐼 Pandas  
-📊 Excel
-
----
-
-# 🧮 Etapa 2 — Customer Health Score
-
-A partir dos dados disponíveis, foi estruturado um modelo de **Customer Health Score** para representar a situação de cada cliente.
-
-O Health Score foi utilizado como uma das variáveis para entender:
-
-- saúde da carteira;
-- clientes potencialmente vulneráveis;
-- relação entre satisfação e saúde;
-- possíveis sinais de churn.
-
----
-
-# 🎯 Etapa 3 — Segmentação e priorização
-
-Após analisar os indicadores individualmente, os clientes foram segmentados considerando principalmente:
-
-**Health Score + Churn Risk + MRR**
-
-O objetivo foi diferenciar:
-
-> **“clientes em risco”**
-
-de
-
-> **“clientes em risco que também representam uma prioridade maior para o negócio”.**
-
-Essa etapa permitiu identificar os clientes classificados como **High Priority**.
-
----
-
-# 📈 Etapa 4 — Dashboard
-
-Depois da análise e segmentação, os dados foram transformados em um dashboard no Excel.
-
-### Principais visualizações
-
-**CSAT × Health Score**
-
-Permite observar a relação entre satisfação e saúde dos clientes.
-
-**Distribuição do MRR**
-
-Mostra como a receita mensal está distribuída entre os segmentos da carteira.
-
-**Customer & Churn Risk**
-
-Tabela com visão individual dos clientes, incluindo:
-
-- Customer ID
-- Churn Risk
 - Health Score
 - CSAT
 - MRR
+- Churn Risk
+- comportamento dos diferentes grupos de clientes
 
-### Dashboard
+A ideia nessa etapa foi entender melhor a carteira antes de partir para a segmentação.
 
-![Customer Success Analytics Dashboard](images/dashboard.png)
+### 2. Segmentação no Excel
 
----
+Depois da exploração inicial, levei os dados para o Excel e comecei a trabalhar a segmentação.
 
-# 💡 Principais insights
+Cruzei principalmente **Health Score, Churn Risk e MRR** para tentar responder uma pergunta:
 
-O principal aprendizado do projeto foi que:
+> Se vários clientes estão em risco, quais deles deveriam receber atenção primeiro?
 
-> **Estar em risco de churn não significa necessariamente ter a mesma prioridade.**
+Isso ajudou a separar clientes em diferentes níveis de prioridade, considerando não apenas o risco, mas também o impacto que aquele cliente representa para a carteira.
 
-Ao cruzar **saúde do cliente, risco e impacto financeiro**, é possível criar uma visão mais estratégica da carteira e direcionar os esforços do time de CS para onde existe maior necessidade ou impacto potencial.
+### 3. Dashboard
 
-Isso transforma uma análise de dados em uma ferramenta de **priorização operacional**.
+Por fim, transformei a análise em um dashboard no Excel.
 
----
+O dashboard reúne algumas das principais informações da carteira, como:
 
-# 🔄 Fluxo do projeto
+- relação entre CSAT e Health Score;
+- distribuição do MRR;
+- risco de churn;
+- Health Score por cliente;
+- CSAT;
+- MRR individual;
+- clientes de maior prioridade.
 
-```text
-Dados
-  ↓
-Exploração
-  ↓
-Customer Health Score
-  ↓
-Análise de Churn Risk
-  ↓
-Segmentação
-  ↓
-Priorização
-  ↓
-Dashboard
-  ↓
-Decisão de CS
-```
+![Dashboard](images/dashboard.png)
 
----
+## O principal aprendizado
 
-# 🛠️ Tecnologias utilizadas
+O ponto que mais gostei nesse projeto foi perceber que **risco de churn, sozinho, não conta toda a história**.
+
+Um cliente pode estar em risco, mas outro cliente com um nível de risco semelhante pode representar um impacto muito maior para o negócio.
+
+Ao cruzar **saúde, satisfação, risco e receita**, a análise começa a ficar mais útil para a tomada de decisão do time de CS.
+
+O objetivo não é simplesmente encontrar clientes em risco.
+
+É ajudar a responder:
+
+> **Onde o time deveria concentrar seus esforços primeiro?**
+
+## Ferramentas utilizadas
 
 - Python
 - Pandas
 - Microsoft Excel
-- Customer Success Analytics
-- Customer Health Score
-- Customer Segmentation
-- Churn Analysis
-- Data Visualization
 
----
-
-# 📁 Estrutura do projeto
+## Estrutura do projeto
 
 ```text
 customer-success-analytics-dashboard/
@@ -193,28 +96,21 @@ customer-success-analytics-dashboard/
 │   └── customer_health_dashboard.xlsx
 │
 ├── images/
-│   ├── dashboard.png
-│   └── segmentation.png
+│   └── dashboard.png
 │
 └── README.md
 ```
 
----
+## Próximos passos
 
-## 🚀 Próximos passos
+Algumas coisas que eu gostaria de explorar em uma próxima versão:
 
-Algumas evoluções possíveis para o projeto:
-
-- automatizar a atualização dos indicadores;
-- criar um modelo preditivo de churn;
+- criar uma análise preditiva de churn;
+- acompanhar a evolução do Health Score ao longo do tempo;
 - adicionar análise de cohort;
-- acompanhar evolução do Health Score ao longo do tempo;
-- integrar os dados com Power BI;
-- criar alertas para clientes de alto risco;
-- desenvolver uma camada de recomendação de ações para o time de CS.
+- testar outros modelos de segmentação;
+- transformar o dashboard em uma solução mais automatizada.
 
 ---
 
-## 👤 Autor
-
-Projeto desenvolvido como parte do meu processo de aprofundamento em **Customer Success, Customer Analytics, CX e Data Analytics**.
+Projeto desenvolvido como parte dos meus estudos e projetos práticos em **Customer Success, Customer Analytics e CX**.
